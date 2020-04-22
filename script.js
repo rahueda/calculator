@@ -37,6 +37,7 @@ const display = (num) => {
 }
 
 const storage = (oper) => {
+    console.log(oper.innerText)
     if(displayNum.innerText=='' && (storageNum.innerText.includes('/') 
                                 ||storageNum.innerText.includes('-') 
                                 ||storageNum.innerText.includes('+') 
@@ -57,15 +58,19 @@ const storage = (oper) => {
             storageNum.innerText = result + oper.innerText
             displayNum.innerText = ''
     
+    } else if(displayNum.innerText == ''  && storageNum.innerText == ''){return
+    
     } else if(storageNum.innerText == '') {
         storageNum.innerText = displayNum.innerText + oper.innerText
         displayNum.innerText = ''
-    
-    } else if(storageNum.innerText != '') {
+    } else if(storageNum.innerText != '' && displayNum.innerText != '') {
+        storageNum.innerText = ''
         storageNum.innerText = displayNum.innerText + oper.innerText
         displayNum.innerText = ''
+    } else {
+        storageNum.innerText = storageNum.innerText + oper.innerText
+        displayNum.innerText = ''
     }
-    
 }
 
 equal.addEventListener('click', () =>{
