@@ -50,8 +50,8 @@ const storage = (oper) => {
     } else if(storageNum.innerText != ''&& (storageNum.innerText.includes('/') 
                                 ||storageNum.innerText.includes('-') 
                                 ||storageNum.innerText.includes('+') 
-                                ||storageNum.innerText.includes('*')
-                                )) {
+                                ||storageNum.innerText.includes('*'))
+    ){
         displayN = displayNum.innerText
         storageN = storageNum.innerText
             const result = eval(storageN + displayN)
@@ -63,10 +63,12 @@ const storage = (oper) => {
     } else if(storageNum.innerText == '') {
         storageNum.innerText = displayNum.innerText + oper.innerText
         displayNum.innerText = ''
+
     } else if(storageNum.innerText != '' && displayNum.innerText != '') {
         storageNum.innerText = ''
         storageNum.innerText = displayNum.innerText + oper.innerText
         displayNum.innerText = ''
+
     } else {
         storageNum.innerText = storageNum.innerText + oper.innerText
         displayNum.innerText = ''
@@ -74,16 +76,21 @@ const storage = (oper) => {
 }
 
 equal.addEventListener('click', () =>{
-    if((storageNum.innerText.includes('/') ||storageNum.innerText.includes('-') ||storageNum.innerText.includes('+') ||storageNum.innerText.includes('*'))) {
+    if((storageNum.innerText.includes('/') 
+        ||storageNum.innerText.includes('-') 
+        ||storageNum.innerText.includes('+') 
+        ||storageNum.innerText.includes('*'))
+    ){
         displayN = displayNum.innerText
         storageN = storageNum.innerText
-        let result = eval(storageN + displayN)
-        storageNum.innerText = result
-        displayNum.innerText = ''
+            let result = eval(storageN + displayN)
+            storageNum.innerText = result
+            displayNum.innerText = ''
+
     } else if (displayNum.innerText != ''){
         storageNum.innerText = displayNum.innerText
         displayNum.innerText = ''
-}
+    }
 })
 
 allClear.addEventListener('click', () => {
