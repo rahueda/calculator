@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    
+}
+
+body::after {
+    content: "";
+    background-image: url("wall.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+.calculatorGrid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: blue;
+    width: 500px;
+    height: 800px;
+    margin: 50px auto;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: 180px repeat(5, 120px);
+    border: 1px solid white;
+}
+
+button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgb(102, 102, 155);
+    border-radius: 10px;
+    font-weight: 900;
+}
+
+button:hover {
+    transform: scale(1.05)
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.display {
+    grid-column: 1/ -1;
+    background-color: rgb(84, 84, 153);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.storageNum {
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.displayNum {
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+}
